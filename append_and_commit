@@ -1,0 +1,5 @@
+touch $1
+LINE=`wc -l $1 | cut -d" " -f1`
+echo "line $(($LINE + 1))" >> $1
+git add $1
+git commit -m "$1: line $(($LINE + 1))"
